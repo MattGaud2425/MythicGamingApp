@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hello:</strong>
+  <%= @example.hello %>
+</p>
+
+<p>
+  <strong>World:</strong>
+  <%= @example.world %>
+</p>
+
+<%= link_to 'Edit', edit_example_path(@example) %> |
+<%= link_to 'Back', examples_path %>
