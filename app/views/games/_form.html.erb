@@ -1,0 +1,28 @@
+<%= form_for(@game) do |f| %>
+	<% if @game.errors.any? %>
+		<p><%= pluralize(@game.errors.count, "error") %> errors kept form from submitting succesfully:</p>
+
+		<ul>
+			<% @game.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+<p></p>
+	<%= f.label :short_title %><br>
+	<%= f.text_field :short_title %>
+<p></p>
+	<%= f.label :image %><br>
+	<%= f.file_field :image %>
+<p></p>
+	<%= f.label :category %><br>
+	<%= f.select :category, ['FPS', 'MOBA', 'MORE', 'Legacy'], :class => "select-list" %>
+<p></p>
+	<%= f.label :active %> <br>
+	<%= f.select :active, [['True', true],['False', false]], :class => "select-list" %>
+<p></p>
+	<%= f.submit %>
+<% end %>

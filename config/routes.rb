@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
   
+
+  
+
   root 'main#home'
 
+  resources :games
+  resources :brackets
+  resources :tournaments
+  resources :examples
+
   devise_for :users
+
+  get 'admin_panels/main'
+  get 'new-form' => 'examples#new_form'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
