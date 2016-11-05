@@ -5,8 +5,15 @@
 <ul>
 	<li>
 		<%= x.title %>
-		<%= image_tag x.image %>
+		<% if x.image_file.url !~ /missing/ %>
+			<%= image_tag x.image_file.url(:tiny) %>
+		<% end %>
 		<%= x.active %>
+		<div class="index-manage">
+			<%= link_to "View" %>
+			<%= link_to "Edit" %>
+			<%= link_to "Delete" %>
+		</div>
 	</li>
 </ul>
 <% end %>

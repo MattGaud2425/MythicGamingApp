@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to @game
+      redirect_to games_path
     else
       render :new 
     end
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:image, :title, :category, :active, :short_title)
+    params.require(:game).permit(:image, :title, :category, :active, :short_title, :image_file)
   end
 
 end
