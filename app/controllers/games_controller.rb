@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :set_game, except: [:index, :new, :create]
 
   def index
     @games = Game.all 
@@ -18,10 +19,12 @@ class GamesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
      @game.update(game_params)
+     redirect_to games_path
   end
 
   def show
@@ -29,6 +32,8 @@ class GamesController < ApplicationController
 
   def destroy
     @game.destroy
+    flash[:success] = "Game Destroyed"
+    redirect_to games_path
   end
 
   private

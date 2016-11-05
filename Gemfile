@@ -23,13 +23,19 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Custom 
+# Custom Authentication and Administration
 gem 'devise'
 # gem 'pundit'
 # gem 'cancan'
 
-# Custom 
+# Custom File Upload
 gem 'paperclip', '~> 5.0.0'
+# gem 'aws-sdk'
+
+# Custom Styling 
+# gem 'susy'
+# gem ''
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,2 +1,35 @@
 <h1>Games#show</h1>
 <p>Find me in app/views/games/show.html.erb</p>
+
+
+<p>
+	Game Title:
+	<%= @game.title %>
+</p>
+
+<p>
+	Short Title:
+	<%= @game.short_title %>
+</p>
+
+<p>
+	Game ID:
+	<%= @game.id %>
+</p>
+
+<p>
+	Game Image: 
+	<%= image_tag @game.image_file.url(:small) %>
+</p>
+
+<p>
+	Category: 
+	<%= @game.category.upcase %>
+</p>
+
+<p>
+	Active: 
+	<%= @game.active %>
+</p>
+
+<%= link_to "Index", games_path %>

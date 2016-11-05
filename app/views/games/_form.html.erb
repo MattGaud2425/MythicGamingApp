@@ -19,7 +19,7 @@
 	<%= f.file_field :image_file %>
 <p></p>
 	<%= f.label :category %><br>
-	<%= f.select :category, ['FPS', 'MOBA', 'MORE', 'Legacy'], :class => "select-list" %>
+	<%= f.select :category, [['FPS', 'fps'],['MOBA', 'moba'],['More', 'more'],['Legacy', 'legacy']], :class => "select-list" %>
 <p></p>
 	<%= f.label :active %> <br>
 	<%= f.select :active, [['True', true],['False', false]], :class => "select-list" %>

@@ -1,0 +1,12 @@
+<%= form_for(@user) do |u| %>
+	<%= u.label :first_name %>
+	<%= u.text_field :first_name %>
+	<p></p>
+	<%= u.label :last_name %>
+	<%= u.text_field :last_name %>
+	<p></p>
+	<%= u.label :admin %>
+	<%= u.select :admin, [["True", true], ["False", false]] %>
+
+	<%= u.submit %>
+<% end %>

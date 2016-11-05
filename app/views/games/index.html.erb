@@ -11,11 +11,15 @@
 			<%= image_tag x.image_file.url(:tiny) %>
 		<% end %>
 		<%= x.active %>
+		<%= x.category.upcase %>
 		<span class="index-manage">
-			<%= link_to "View" %>
-			<%= link_to "Edit" %>
-			<%= link_to "Delete" %>
+			<%= link_to "View", x %>
+			<%= link_to "Edit", edit_game_path(x) %>
+			<%= link_to "Delete", x, method: :delete, data: { confirm: "Are you sure?"} %>
 		</span>
 	</li>
 </ul>
 <% end %>
+
+
+ 

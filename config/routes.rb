@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  
 
-  
 
+  resources :examples
   root 'main#home'
 
   resources :games
   resources :brackets
   resources :tournaments
-  resources :examples
+  resources :users
 
   devise_for :users
 

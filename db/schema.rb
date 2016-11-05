@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105004622) do
+ActiveRecord::Schema.define(version: 20161105221423) do
 
   create_table "brackets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20161105004622) do
     t.string   "image_file_content_type"
     t.integer  "image_file_file_size"
     t.datetime "image_file_updated_at"
+  end
+
+  create_table "new_examples", force: :cascade do |t|
+    t.string   "hello"
+    t.string   "kitty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tournaments", force: :cascade do |t|

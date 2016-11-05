@@ -15,3 +15,38 @@
 <% if user_signed_in? %>
 	<%= link_to "Edit Profile", edit_user_registration_path %>
 <% end %>
+
+<p><%= link_to "Users Index", users_path %></p>
+<p><%= link_to "Games Index", games_path %></p>
+
+FPS Games: 
+<% Game.fps.each do |x| %> 
+	<div class="fps-item"></div>
+	<p><%= x.title %></p>
+	<p><%= image_tag x.image_file.url(:small) %></p>
+<% end %>
+
+<% Game.moba.each do |x| %>
+	<div class="moba-item"></div>
+	<p><%= x.title %></p>
+	<p><%= image_tag x.image_file.url(:small) %></p>
+<% end %>
+
+<% Game.more.each do |x| %>
+	<div class="more-item"></div>
+	<p><%= x.title %></p>
+	<p><%= image_tag x.image_file.url(:small) %></p>
+<% end %>
+
+<% Game.legacy.each do |x| %>
+	<div class="legacy-item"></div>
+	<p><%= x.title %></p>
+	<p><%= image_tag x.image_file.url(:small) %></p>
+<% end %>
+
+
+
+
+
+
+
