@@ -1,0 +1,144 @@
+// Susy
+@import 'susy';
+
+// +++++++++++++++++++++++++++
+// Defaults
+// +++++++++++++++++++++++++++
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: 1/5,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+// +++++++++++++++++++++++++++
+// Maps
+// +++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++
+// Boxes
+// +++++++++++++++++++++++++++
+.grid {
+  max-width: 1260px;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  @include container;
+}
+
+
+// +++++++++++++++++++++++++++
+// Global Values
+// +++++++++++++++++++++++++++
+@include border-box-sizing;
+
+// +++++++++++++++++++++++++++
+// Columns
+// +++++++++++++++++++++++++++
+.col {
+	&-1 { @include span(1); }
+	&-2 { @include span(2); }
+	&-3 { @include span(3); }
+	&-4 { @include span(4); }
+	&-5 { @include span(5); }
+	&-6 { @include span(6); }
+	&-7 { @include span(7); }
+	&-8 { @include span(8); }
+	&-9 { @include span(9); }
+	&-10 { @include span(10); }
+	&-11 { @include span(11); }
+	&-12 { @include span(12); }
+}
+
+.off {
+  &-1 { @include push(1); }
+  &-2 { @include push(2); }
+  &-3 { @include push(3); }
+  &-4 { @include push(4); }
+  &-5 { @include push(5); }
+  &-6 { @include push(6); }
+  &-7 { @include push(7); }
+  &-8 { @include push(8); }
+  &-9 { @include push(9); }
+  &-10 { @include push(10); }
+  &-11 { @include push(11); }
+  &-12 { @include push(12); }
+}
+
+@media screen and (max-width: 768px) {
+  .col {
+  &-1 { @include span(2); }
+  &-2 { @include span(4); }
+  &-3 { @include span(6); }
+  &-4 { @include span(8); }
+  &-5 { @include span(10); }
+  &-6 { @include span(12); }
+  &-7 { @include span(12); }
+  &-8 { @include span(12); }
+  &-9 { @include span(12); }
+  &-10 { @include span(12); }
+  &-11 { @include span(12); }
+  &-12 { @include span(12); }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .col {
+  &-1 { @include span(12); }
+  &-2 { @include span(12); }
+  &-3 { @include span(12); }
+  &-4 { @include span(12); }
+  &-5 { @include span(12); }
+  &-6 { @include span(12); }
+  &-7 { @include span(12); }
+  &-8 { @include span(12); }
+  &-9 { @include span(12); }
+  &-10 { @include span(12); }
+  &-11 { @include span(12); }
+  &-12 { @include span(12); }
+  }
+}
+
+// col -16
+.column {
+  &-1 { @include span(1 of 16); }
+  &-2 { @include span(2 of 16); }
+  &-3 { @include span(3 of 16); }
+  &-4 { @include span(4 of 16); }
+  &-5 { @include span(5 of 16); }
+  &-6 { @include span(6 of 16); }
+  &-7 { @include span(7 of 16); }
+  &-8 { @include span(8 of 16); }
+  &-9 { @include span(9 of 16); }
+  &-10 { @include span(10 of 16); }
+  &-11 { @include span(11 of 16); }
+  &-12 { @include span(12 of 16); }
+  &-13 { @include span(13 of 16); }
+  &-14 { @include span(14 of 16); }
+  &-15 { @include span(15 of 16); }
+  &-16 { @include span(16 of 16); }
+}
+

@@ -2,29 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.fps-item{
+$fps-color: #4747d1;
+$moba-color: #ff7733;
+$more-color: #339966;
+$legacy-color: #0066cc;
+
+.fps-item {
 	height: 10px;
 	width: 80%;
-	background-color: green;
+	background-color: $fps-color;
 }
 
 .moba-item {
 	height: 10px;
 	width: 80%;
-	background-color: blue;
+	background-color: $moba-color;
 
 }
 
 .more-item {
 	height: 10px;
 	width: 80%;
-	background-color: red;
+	background-color: $more-color;
 
 }
 
 .legacy-item {
 	height: 10px;
 	width: 80%;
-	background-color: orange;
+	background-color: $legacy-color;
 
 }
