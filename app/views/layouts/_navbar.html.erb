@@ -1,0 +1,56 @@
+<nav class="navbar">
+  <ul class="navvy" id="topnav">
+    <li><i class="fa fa-cubes"></i><%= link_to "Mythic Gaming", root_path, :class => "logo-link" %></li>
+    <li><%= link_to "FPS Games", root_path, :class => "fps-link" %>
+      <ul class="drop-content">
+        <% Game.fps.each do |x| %>
+          <li><%= link_to "#{x.short_title}", brackets_path %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><%= link_to "MOBA Games", root_path, :class => "moba-link" %>
+       <ul class="drop-content">
+        <% Game.moba.each do |x| %>
+          <li><%= link_to "#{x.short_title}", brackets_path %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><%= link_to "More Games", root_path, :class => "more-link" %>
+       <ul class="drop-content">
+        <% Game.more.each do |x| %>
+          <li><%= link_to "#{x.short_title}", brackets_path %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><%= link_to "Legacy Games", root_path, :class => "legacy-link" %>
+       <ul class="drop-content">
+        <% Game.legacy.each do |x| %>
+          <li><%= link_to "#{x.short_title}", brackets_path %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><%= link_to "Information", root_path, class: "nav-link" %>
+       <ul class="drop-content">
+        <li><a href="">link</a></li>
+        <li><a href="">link</a></li>
+        <li><a href="">link</a></li>
+      </ul>
+    </li>
+    <% if user_signed_in? %>
+      <li style="float:right;"><i class="fa fa-user" aria-hidden="true"></i><%= link_to "Profile", root_path, :class => "nav-link" %></li>
+    <% else %>
+      <li style="float:right;"><%= link_to "Log in", root_path, :class => "nav-link" %></li>
+      <li style="float:right;"><%= link_to "Sign up", root_path, :class => "register-link" %></li>
+    <% end %>
+  </ul>
+</nav>
+<!-- 
+<div class="new-nav">
+  <ul>
+    <li><a href="">Link</a></li>
+    <li><a href="">Link</a></li>
+    <li><a href="">Link</a></li>
+    <li><a href="">Link</a></li>
+    <li><a href="">Link</a></li>
+  </ul>
+</div> -->

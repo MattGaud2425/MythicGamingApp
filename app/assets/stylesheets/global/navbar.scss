@@ -1,0 +1,94 @@
+// Colors and Variables
+$fps-color: #4747d1;
+$moba-color: #ff7733;
+$more-color: #339966;
+$legacy-color: #0066cc;
+
+
+nav.navbar {
+    background-color: #333;
+}
+
+.navvy {
+    max-width: 1260px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+// Navbar
+nav {
+    ul { 
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        li {
+            float: left;
+            a {
+                display: inline-block;
+                color: #fff;
+                text-decoration: none;
+                padding: 20px;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+// Link Colors 
+a.logo-link {
+    &:hover {
+        background-color: #555;
+    }
+}
+
+a.nav-link {
+    &:hover {
+        background-color: #555;
+    }
+}
+a.fps-link {
+    &:hover {
+        background-color: $fps-color;
+        
+    }
+}
+a.moba-link {
+    &:hover {
+        background-color: $moba-color;
+        
+    }
+}
+a.more-link {
+    &:hover {
+        background-color: $more-color;
+        
+    }
+}
+a.legacy-link {
+    &:hover {
+        background-color: $legacy-color;
+        
+    }
+}
+
+a.register-link {
+    padding: 10px;
+    border: 2px solid $moba-color;
+    border-radius: 7px;
+    &:hover {
+        background-color: $moba-color;
+        color: #000;
+    }
+}
+
+// Drop
+
+nav .drop-content {
+    li {
+        a {
+            display: none;
+        }
+    }
+}
