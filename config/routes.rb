@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
 
 
-  resources :examples
+  
   root 'main#home'
 
   resources :games
   resources :brackets
   resources :tournaments
   resources :users
+  resources :examples
 
   devise_for :users
+
+  devise_scope :user do
+    get '/signout', to: 'devise/sessions#destroy', as: :signout
+  end
 
   get 'admin_panels/main'
   get 'new-form' => 'examples#new_form'

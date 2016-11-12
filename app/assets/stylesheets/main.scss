@@ -13,6 +13,12 @@ $legacy-color: #0066cc;
 	margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+	.main-content {
+		width: 100%;
+	}
+}
+
 .fps-item {
 	height: 10px;
 	width: 80%;
