@@ -16,7 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Custom Authentication and Administration
 gem 'devise'
 # gem 'pundit'
-gem 'cancancan', '~> 1.10'
+gem 'cancancan', '>= 1.10.0'
 
 # Custom File Upload
 gem 'paperclip', '~> 5.0.0'

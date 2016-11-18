@@ -13,9 +13,17 @@
 		<%= x.active %>
 		<%= x.category.upcase %>
 		<span class="index-manage">
-			<%= link_to "View", x %>
-			<%= link_to "Edit", edit_game_path(x) %>
-			<%= link_to "Delete", x, method: :delete, data: { confirm: "Are you sure?"} %>
+
+		<%= link_to "View", x %>
+
+		<% if can? :update, @article %>
+  		<%= link_to "Edit", edit_game_path(x) %>
+		<% end %>
+
+		<% if can? :delete, @article %>
+  		<%= link_to "Delete", x, method: :delete, data: { confirm: "Are you sure?"} %>
+		<% end %>
+			
 		</span>
 	</li>
 </ul>
