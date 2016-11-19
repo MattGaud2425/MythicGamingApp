@@ -1,0 +1,21 @@
+<h1>admin_panels#control_panel</h1>
+<p>Find me in app/views/admin_panels/control_panel.html.erb</p>
+
+<% if user_signed_in? %>
+	<%= link_to "Log out", signout_path %>
+<% else %>
+	<%= link_to "Sign up", new_user_registration_path %>
+	<%= link_to "Log in", new_user_session_path %>
+<% end %>
+
+<% if user_signed_in? %>
+	<p><%= current_user.email %></p>
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to "Edit Profile", edit_user_registration_path %>
+<% end %>
+
+<p><%= link_to "Users Index", users_path %></p>
+<p><%= link_to "Games Index", games_path %></p>
+<p><%= link_to "Brackets Index", brackets_path %></p>

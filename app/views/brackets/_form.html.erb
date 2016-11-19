@@ -1,0 +1,30 @@
+<%= form_for([@game, @bracket]) do |f| %>
+	<% if @bracket.errors.any? %>
+		<p><%= pluralize(@game.errors.count, "error") %> errors kept form from submitting succesfully:</p>
+
+		<ul>
+			<% @bracket.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %> 
+<p></p>
+	<%= f.label :maps %><br>
+	<%= f.text_field :maps %>
+<p></p>
+	<%= f.label :game_types %><br>
+	<%= f.text_field :game_types %>
+<p></p>
+<%= f.label :rounds %><br>
+	<%= f.text_field :rounds %>
+<p></p>
+	<%= f.label :team_size %><br>
+	<%= f.text_field :team_size %>
+<p></p>
+<!-- 	<%= f.label :game_id %> <br>
+	<%= f.select :game_id, Game.all.collect { |g| [ g.short_title, g.id ] }, include_blank: true, :class => "select-list" %> -->
+<p></p>
+	<%= f.submit %>
+<% end %>

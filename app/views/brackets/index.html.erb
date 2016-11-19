@@ -1,2 +1,47 @@
 <h1>Brackets#index</h1>
 <p>Find me in app/views/brackets/index.html.erb</p>
+
+<% if @game.present? %>
+  <%= link_to "New Bracket", new_game_bracket_path(@game) %>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>title:</th>
+      <th>maps</th>
+      <th>rounds</th>
+      <th>team size</th>
+      <th>game types</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brackets.each do |bracket| %>
+      <tr>
+        <td><%= bracket.title %></td>
+        <td><%= bracket.maps %></td>
+        <td><%= bracket.rounds %></td>
+        <td><%= bracket.team_size %></td>
+        <td><%= bracket.game_types %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %> 
+
+  <% Game.all.each do |game| %> 
+  <p>
+   Game:  <%= game.title %> 
+      <% game.brackets.each do |bracket| %>
+      Brackets:  <%= bracket.title %>
+      <% end %>
+  <% end %>
+  </p>
+<% end %>
+
+
+

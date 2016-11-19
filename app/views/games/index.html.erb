@@ -23,6 +23,11 @@
 		<% if can? :delete, @article %>
   		<%= link_to "Delete", x, method: :delete, data: { confirm: "Are you sure?"} %>
 		<% end %>
+
+		<!-- pipe for styling purposes -->
+		|
+
+		<%= link_to "Brackets", game_brackets_path(x) %>
 			
 		</span>
 	</li>

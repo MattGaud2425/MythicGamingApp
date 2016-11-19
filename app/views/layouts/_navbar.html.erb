@@ -1,4 +1,4 @@
-<nav class="navbar">
+<!-- <nav class="navbar">
   <ul class="navvy" id="topnav">
     <li><i class="fa fa-cubes"></i><%= link_to "Mythic Gaming", root_path, :class => "logo-link" %></li>
     <li><%= link_to "FPS Games", root_path, :class => "fps-link" %>
@@ -8,7 +8,7 @@
         <% end %>
       </ul>
     </li>
-    <li><%= link_to "MOBA Games", root_path, :class => "moba-link" %>
+    <li><%= link_to "MOBA Games", root_path, :class => "moba-link drop-link" %>
        <ul class="drop-content">
         <% Game.moba.each do |x| %>
           <li><%= link_to "#{x.short_title}", brackets_path %></li>
@@ -43,7 +43,7 @@
       <li style="float:right;"><%= link_to "Sign up", root_path, :class => "register-link" %></li>
     <% end %>
   </ul>
-</nav>
+</nav> -->
 <!-- 
 <div class="new-nav">
   <ul>
@@ -54,3 +54,196 @@
     <li><a href="">Link</a></li>
   </ul>
 </div> -->
+<!-- <br><br>
+
+<ul class="w3-navbar w3-large w3-black w3-left-align">
+  <li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+  </li>
+  <li><a href="#">Home</a></li>
+  <li class="w3-hide-small"><a href="#">Link 1</a></li>
+  <li class="w3-hide-small"><a href="#">Link 2</a></li>
+  <li class="w3-hide-small"><a href="#">Link 3</a></li>
+  <li class="w3-dropdown-hover">
+    <a href="#">Dropdown</a>
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+  <li class="w3-dropdown-hover">
+    <a href="#">Dropdown 2</a>
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+</ul>
+
+<div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
+  <ul class="w3-navbar w3-left-align w3-large w3-black">
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li class="w3-dropdown-hover">
+    <a href="#">Dropdown</a>
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+  </ul>
+</div>
+ -->
+
+  <!-- Beginning of Nav -->
+<ul class="w3-navbar w3-large w3-left-align"> <!-- Beginning of W3 Nav -->
+<nav class="navvy">
+  <li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+  </li>
+  <!-- Logo -->
+  <li><%= link_to "Mythic Gaming", root_path %></li>
+  <!-- <li class="w3-hide-small"><a href="#">Link 3</a></li> -->
+ <!--  Main Nav -->
+  <li class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+    <%= link_to "FPS Games", root_path, :class => "fps-link" %>
+    <div class="w3-dropdown-content w3-card-4 fps-drop-content">
+      <% Game.fps.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
+    </div>
+  </li>
+  <li class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+    <%= link_to "MOBA Games", root_path, :class => "moba-link" %>
+    <div class="w3-dropdown-content w3-card-4 moba-drop-content">
+      <% Game.moba.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
+    </div>
+  </li>
+  <li class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+    <%= link_to "More Games", root_path, :class => "more-link" %>
+    <div class="w3-dropdown-content w3-card-4 more-drop-content">
+      <% Game.more.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
+    </div>
+  </li>
+   <li class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+    <%= link_to "Legacy Games", root_path, :class => "legacy-link" %>
+    <div class="w3-dropdown-content w3-card-4 legacy-drop-content">
+      <% Game.legacy.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
+    </div>
+  </li>
+  <li class="w3-hide-large w3-hide-small"><a href="javascript:void(0)" onclick="w3_open()">All Games <i class="fa fa-caret-down"></i></a></li>
+  <li class="w3-dropdown-hover w3-hide-small">
+    <a href="#">Information</a>
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+
+  <!-- Admin -->
+  <% if current_user && current_user.admin? %>
+    <li class="w3-hide-small"><%= link_to "Admin", control_path %></li>
+  <% end %>
+ <!-- End of main nav -->
+
+  <!-- Right Aligned Links -->
+
+  <% if user_signed_in? %>
+    <li class="w3-dropdown-hover w3-hide-small w3-right">
+      <a href="#"><i class="fa fa-user"></i> Profile</a>
+      <div class="w3-dropdown-content w3-white w3-card-4" style="right: 0;">
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+        <a href="#">Settings</a>
+        <a href="#">Invites</a>
+        <a href="#">Payment</a>
+        <hr>
+        <%= link_to "Log out", signout_path %>
+      </div>
+    </li>
+  <% else %>
+    <li class="w3-right w3-hide-small"><%= link_to "Log in", new_user_session_path %></li>
+    <li class="w3-right w3-hide-small"><%= link_to "Sign up", new_user_registration_path %></li>
+  <% end %>
+
+  
+</nav> <!-- End of Nav -->
+</ul> <!-- End of W3 Nav -->
+
+
+<!-- What Shows up In Mobile Menu  -->
+<div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
+  <ul class="w3-navbar w3-left-align w3-large w3-black">
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="javascript:void(0)" onclick="w3_open()">Dropnav</a></li>
+  </ul>
+</div> <!-- End of Mobile Menu -->
+
+<!-- DropNav Links -->
+<nav class="w3-dropnav w3-card-2" style="display:none" id="myDropnav">
+  <div class="w3-container">
+  <span onclick="w3_close()" class="w3-closebtn w3-xlarge" title="Close Menu">&times;</span>
+  </div>
+  <div class="w3-row-padding w3-padding-bottom">
+    <div class="w3-quarter fps-dropnav dropnav-links">
+    <h>FPS Games</h>
+    <a href="#">Call of Duty</a>
+    <a href="#">Counter Strike</a>
+    <a href="#">Halo 5</a>
+    </div>
+    <div class="w3-quarter moba-dropnav dropnav-links">
+    <h>MOBA Games</h>
+    <a href="#">Call of Duty</a>
+    <a href="#">Counter Strike</a>
+    <a href="#">Halo 5</a>
+    </div>
+    <div class="w3-quarter more-dropnav dropnav-links">
+    <h>MORE Games</h>
+    <a href="#">Call of Duty</a>
+    <a href="#">Counter Strike</a>
+    <a href="#">Halo 5</a>
+    </div>
+    <div class="w3-quarter legacy-dropnav dropnav-links">
+    <h>Legacy Games</h>
+    <a href="#">Call of Duty</a>
+    <a href="#">Counter Strike</a>
+    <a href="#">Halo 5</a>
+    </div>
+  </div>
+  <br>
+</nav> <!-- End of Drop Nav -->
+
+
+<script>
+var x = document.getElementById("myDropnav");
+function w3_open() {
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+function w3_close() {
+    x.className = x.className.replace(" w3-show", "");
+}
+function myFunction() {
+    var x = document.getElementById("demo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>

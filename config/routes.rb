@@ -1,24 +1,41 @@
 Rails.application.routes.draw do
 
+  # Root
+  if Rails.env.development?
+    root 'main#amalgam'
+  else
+    root 'main#home'
+  end
 
+  # Main
+  get 'home' => "main#home"
+
+  # Games Nested Brackets
+  resources :games do 
+    resources :brackets
+  end
+  resources :brackets, only: :index
   
-  root 'main#home'
-
-  resources :games
-  resources :brackets
+  # Tournaments
   resources :tournaments
+
+  # Examples
   resources :examples
 
+  # Devise
   devise_for :users
-
-
   devise_scope :user do
     get '/signout', to: 'devise/sessions#destroy', as: :signout
   end
 
+  # Users
   resources :users
 
-  get 'admin_panels/main'
+  # Admin
+  get 'admin/main' => 'admin_panels#main'
+  get 'control' => 'admin_panels#control_panel'
+
+  # Miscellaneous
   get 'new-form' => 'examples#new_form'
 
   # The priority is based upon order of creation: first created -> highest priority.
