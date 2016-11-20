@@ -1,39 +1,27 @@
-<h1>Main#home</h1>
+<!-- <h1>Main#home</h1>
 <p>Find me in app/views/main/home.html.erb</p>
-
-<% 
-=begin %>
-<% if user_signed_in? %>
-	<%= link_to "Log out", signout_path %>
-<% else %>
-	<%= link_to "Sign up", new_user_registration_path %>
-	<%= link_to "Log in", new_user_session_path %>
-<% end %>
-
-<% if user_signed_in? %>
-	<p><%= current_user.email %></p>
-<% end %>
-
-<% if user_signed_in? %>
-	<%= link_to "Edit Profile", edit_user_registration_path %>
-<% end %>
-<% 
-=end %>
-<!-- <div class="box games-set">
-	<div class="col-3 game-box"><h3>Content</h3></div>
-	<div class="col-3 game-box"><h3>Content</h3></div>
-	<div class="col-3 game-box"><h3>Content</h3></div>
-	<div class="col-3 game-box"><h3>Content</h3></div>
-</div> -->
+ -->
+<%= render "layouts/hero" %>
 
 <div class="box games-set">
 	<% Game.fps.each do |game| %> 
 		<div class="col-3 full-view">
 			<div class="game-box game-box-fps">
 				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
-				<p><h4><%= game.title %></h4></p>
-				<p>Players Joined </p>
-				<p>Systems</p>
+				<p class="game-info">
+					<span class="tall-text">
+						<% if game.title.length >= 25 %>
+							<%= game.short_title %>
+						<% else %>
+							<%= game.title %>	
+						<% end %> 
+					</span>
+				<span class="num-play">Players</span></p>
+				<!-- <p>Systems 
+					<i class="fa fa-square-o i-small"></i>
+					<i class="fa fa-play-circle i-small"></i>
+					<i class="fa fa-steam-square i-small"></i>
+				</p> -->
 			</div>
 		</div>
 	<% end %>
@@ -44,8 +32,15 @@
 		<div class="col-3 full-view">
 			<div class="game-box game-box-moba">
 				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
-				<p><h4><%= game.title %></h4></p>
-				<p></p>
+					<p class="game-info">
+					<span class="tall-text">
+						<% if game.title.length >= 25 %>
+							<%= game.short_title %>
+						<% else %>
+							<%= game.title %>	
+						<% end %> 
+					</span>
+				<span class="num-play">Players</span></p>
 			</div>
 		</div>
 	<% end %>
@@ -56,8 +51,15 @@
 		<div class="col-3 full-view">
 			<div class="game-box game-box-more">
 				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
-				<p><h4><%= game.title %></h4></p>
-				<p></p>
+					<p class="game-info">
+					<span class="tall-text">
+						<% if game.title.length >= 25 %>
+							<%= game.short_title %>
+						<% else %>
+							<%= game.title %>	
+						<% end %> 
+					</span>
+				<span class="num-play">Players</span></p>
 			</div>
 		</div>
 	<% end %>
@@ -68,8 +70,15 @@
 		<div class="col-3 full-view">
 			<div class="game-box game-box-legacy">
 				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
-				<p><h4><%= game.title %></h4></p>
-				<p></p>
+					<p class="game-info">
+					<span class="tall-text">
+						<% if game.title.length >= 25 %>
+							<%= game.short_title %>
+						<% else %>
+							<%= game.title %>	
+						<% end %> 
+					</span>
+				<span class="num-play">Players</span></p>
 			</div>
 		</div>
 	<% end %>

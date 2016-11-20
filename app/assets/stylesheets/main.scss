@@ -36,10 +36,12 @@ $legacy-color: #0066cc;
 }
 
 
-// Games Set and Game Box
+// Games Set and Game Box 
+// it goes .game-set .game-box .game-img .game-info
 .games-set {
 	background-color: #333;
 	margin: 2vh 0;
+	padding-bottom: 15px;
 	&:first-of-type {
 		margin-top: 0;
 	}
@@ -50,12 +52,15 @@ $legacy-color: #0066cc;
 
 .game-box {
 	background-color: green;
-	margin: 15px 0px;
+	margin: 15px 0px 0px 0px ;
 	&:first-child {
 		margin-left: none;
 	}
 	&:last-child {
 		margin-right: none;
+	}
+	&:hover {
+		cursor: pointer;
 	}
 }
 
@@ -81,4 +86,25 @@ $legacy-color: #0066cc;
 .game-img {
 	width: 100%;
 	height: 25vh;
+}
+
+// @media screen and (max-width: 768px) {
+// 	height: 15vh;
+// }
+
+// Game Title Font Size
+
+.game-info {
+	color: #000;
+}
+.tall-text {
+	font-size: 1.25em;
+	line-height: 1.25em;
+
+}
+
+.num-play {
+	margin-bottom: 0;
+	line-height: 1.25em;
+	float: right;
 }
