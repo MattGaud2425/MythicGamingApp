@@ -1,7 +1,7 @@
-
+// Main Content Box
 .main-content {
 	max-width: 1260px;
-	width: 90%;
+	width: 94%;
 	margin: 0 auto;
 }
 
@@ -9,4 +9,30 @@
 	.main-content {
 		width: 100%;
 	}
+}
+
+// Navvy Content Box
+.navvy {
+    max-width: 1260px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .navvy {
+        width: 100%;
+    }
+}
+
+// Footy Content Box
+.footy {
+    max-width: 1260px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .footy {
+        width: 100%;
+    }
 }

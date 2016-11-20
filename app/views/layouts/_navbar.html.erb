@@ -1,113 +1,16 @@
-<!-- <nav class="navbar">
-  <ul class="navvy" id="topnav">
-    <li><i class="fa fa-cubes"></i><%= link_to "Mythic Gaming", root_path, :class => "logo-link" %></li>
-    <li><%= link_to "FPS Games", root_path, :class => "fps-link" %>
-      <ul class="drop-content">
-        <% Game.fps.each do |x| %>
-          <li><%= link_to "#{x.short_title}", brackets_path %></li>
-        <% end %>
-      </ul>
-    </li>
-    <li><%= link_to "MOBA Games", root_path, :class => "moba-link drop-link" %>
-       <ul class="drop-content">
-        <% Game.moba.each do |x| %>
-          <li><%= link_to "#{x.short_title}", brackets_path %></li>
-        <% end %>
-      </ul>
-    </li>
-    <li><%= link_to "More Games", root_path, :class => "more-link" %>
-       <ul class="drop-content">
-        <% Game.more.each do |x| %>
-          <li><%= link_to "#{x.short_title}", brackets_path %></li>
-        <% end %>
-      </ul>
-    </li>
-    <li><%= link_to "Legacy Games", root_path, :class => "legacy-link" %>
-       <ul class="drop-content">
-        <% Game.legacy.each do |x| %>
-          <li><%= link_to "#{x.short_title}", brackets_path %></li>
-        <% end %>
-      </ul>
-    </li>
-    <li><%= link_to "Information", root_path, class: "nav-link" %>
-       <ul class="drop-content">
-        <li><a href="">link</a></li>
-        <li><a href="">link</a></li>
-        <li><a href="">link</a></li>
-      </ul>
-    </li>
-    <% if user_signed_in? %>
-      <li style="float:right;"><i class="fa fa-user" aria-hidden="true"></i><%= link_to "Profile", root_path, :class => "nav-link" %></li>
-    <% else %>
-      <li style="float:right;"><%= link_to "Log in", root_path, :class => "nav-link" %></li>
-      <li style="float:right;"><%= link_to "Sign up", root_path, :class => "register-link" %></li>
-    <% end %>
-  </ul>
-</nav> -->
-<!-- 
-<div class="new-nav">
-  <ul>
-    <li><a href="">Link</a></li>
-    <li><a href="">Link</a></li>
-    <li><a href="">Link</a></li>
-    <li><a href="">Link</a></li>
-    <li><a href="">Link</a></li>
-  </ul>
-</div> -->
-<!-- <br><br>
 
-<ul class="w3-navbar w3-large w3-black w3-left-align">
-  <li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
-    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
-  </li>
-  <li><a href="#">Home</a></li>
-  <li class="w3-hide-small"><a href="#">Link 1</a></li>
-  <li class="w3-hide-small"><a href="#">Link 2</a></li>
-  <li class="w3-hide-small"><a href="#">Link 3</a></li>
-  <li class="w3-dropdown-hover">
-    <a href="#">Dropdown</a>
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-  <li class="w3-dropdown-hover">
-    <a href="#">Dropdown 2</a>
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul>
-
-<div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
-  <ul class="w3-navbar w3-left-align w3-large w3-black">
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
-    <li><a href="#">Link 3</a></li>
-    <li class="w3-dropdown-hover">
-    <a href="#">Dropdown</a>
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-  </ul>
-</div>
- -->
-
-  <!-- Beginning of Nav -->
+<!-- Beginning of Nav -->
 <ul class="w3-navbar w3-large w3-left-align"> <!-- Beginning of W3 Nav -->
 <nav class="navvy">
   <li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
     <a href="javascript:void(0);" onclick="myFunction()">☰</a>
   </li>
   <!-- Logo -->
-  <li><%= link_to "Mythic Gaming", root_path %></li>
+  <li><%= link_to "Mythic Gaming", root_path, :class => "logo-link" %></li>
+
+  <!-- Standard Link for Navbar Example -->
   <!-- <li class="w3-hide-small"><a href="#">Link 3</a></li> -->
+
  <!--  Main Nav -->
   <li class="w3-dropdown-hover w3-hide-medium w3-hide-small">
     <%= link_to "FPS Games", root_path, :class => "fps-link" %>
@@ -158,11 +61,10 @@
  <!-- End of main nav -->
 
   <!-- Right Aligned Links -->
-
   <% if user_signed_in? %>
     <li class="w3-dropdown-hover w3-hide-small w3-right">
       <a href="#"><i class="fa fa-user"></i> Profile</a>
-      <div class="w3-dropdown-content w3-white w3-card-4" style="right: 0;">
+      <div class="w3-dropdown-content w3-white w3-card-4">
         <%= link_to "Edit Profile", edit_user_registration_path %>
         <a href="#">Settings</a>
         <a href="#">Invites</a>
@@ -174,7 +76,7 @@
   <% else %>
     <li class="w3-right w3-hide-small"><%= link_to "Log in", new_user_session_path %></li>
     <li class="w3-right w3-hide-small"><%= link_to "Sign up", new_user_registration_path %></li>
-  <% end %>
+  <% end %> <!-- End of Right Aligned Links -->
 
   
 </nav> <!-- End of Nav -->
@@ -184,10 +86,15 @@
 <!-- What Shows up In Mobile Menu  -->
 <div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
   <ul class="w3-navbar w3-left-align w3-large w3-black">
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
-    <li><a href="#">Link 3</a></li>
-    <li><a href="javascript:void(0)" onclick="w3_open()">Dropnav</a></li>
+    <li><a href="javascript:void(0)" onclick="w3_open()">Games</a></li>
+    <li><%= link_to "Information", brackets_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Profile" %></li>
+      <li><%= link_to "Log out", signout_path %></li>
+    <% else %>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <% end %>
   </ul>
 </div> <!-- End of Mobile Menu -->
 
@@ -198,28 +105,28 @@
   </div>
   <div class="w3-row-padding w3-padding-bottom">
     <div class="w3-quarter fps-dropnav dropnav-links">
-    <h>FPS Games</h>
-    <a href="#">Call of Duty</a>
-    <a href="#">Counter Strike</a>
-    <a href="#">Halo 5</a>
+      <h5>FPS</h5>
+      <% Game.fps.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
     </div>
     <div class="w3-quarter moba-dropnav dropnav-links">
-    <h>MOBA Games</h>
-    <a href="#">Call of Duty</a>
-    <a href="#">Counter Strike</a>
-    <a href="#">Halo 5</a>
+    <h5>MOBA</h5>
+     <% Game.moba.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
     </div>
     <div class="w3-quarter more-dropnav dropnav-links">
-    <h>MORE Games</h>
-    <a href="#">Call of Duty</a>
-    <a href="#">Counter Strike</a>
-    <a href="#">Halo 5</a>
+    <h5>MORE</h5>
+     <% Game.more.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
     </div>
     <div class="w3-quarter legacy-dropnav dropnav-links">
-    <h>Legacy Games</h>
-    <a href="#">Call of Duty</a>
-    <a href="#">Counter Strike</a>
-    <a href="#">Halo 5</a>
+    <h5>Legacy</h5>
+     <% Game.legacy.each do |x| %>
+        <%= link_to "#{x.short_title}", brackets_path %>
+      <% end %>
     </div>
   </div>
   <br>

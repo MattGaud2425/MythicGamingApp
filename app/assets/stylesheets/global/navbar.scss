@@ -5,168 +5,12 @@ $moba-color: #ff7733;
 $more-color: #339966;
 $legacy-color: #0066cc;
 
-
-// nav.navbar {
-//     background-color: #333;
-// }
-
-// .navvy {
-//     max-width: 1260px;
-//     width: 90%;
-//     margin: 0 auto;
-// }
-
-// @media screen and (max-width: 768px) {
-//     .navvy {
-//         width: 100%;
-//     }
-// }
-// // Navbar
-// nav {
-//     ul { 
-//         list-style-type: none;
-//         margin: 0;
-//         padding: 0;
-//         overflow: hidden;
-//         li {
-//             float: left;
-//             a {
-//                 display: inline-block;
-//                 color: #fff;
-//                 text-decoration: none;
-//                 padding: 20px;
-//                 transition: 0.3s;
-//                 font-size: 17px;
-//             }
-//         }
-//     }
-// }
-
-// // Link Colors 
-// a.logo-link {
-//     &:hover {
-//         background-color: #555;
-//     }
-// }
-
-// a.nav-link {
-//     &:hover {
-//         background-color: #555;
-//     }
-// }
-// a.fps-link {
- 
-//     &:hover {
-//         background-color: $fps-color;
-//         color: #fff;
-        
-//     }
-// }
-// a.moba-link {
-  
-//     &:hover {
-//         background-color: $moba-color;
-//         color: #fff;
-        
-//     }
-// }
-// a.more-link {
-  
-//     &:hover {
-//         background-color: $more-color;
-//         color: #fff;
-        
-//     }
-// }
-// a.legacy-link {
-    
-//     &:hover {
-//         background-color: $legacy-color;
-//         color: #fff;
-        
-//     }
-// }
-
-// a.register-link {
-//     padding: 10px;
-//     border: 2px solid $moba-color;
-//     border-radius: 7px;
-//     &:hover {
-//         background-color: $moba-color;
-//         color: #000;
-//     }
-// }
-
-// // Drop
-
-// nav .drop-content {
-//     display: block;
-// }
-
-
-
-
-// ////// dropporpodrodrpodrop 
-
-// /* Dropdown Button */
-// .dropbtn {
-//     background-color: #4CAF50;
-//     color: white;
-//     padding: 16px;
-//     font-size: 16px;
-//     border: none;
-//     cursor: pointer;
-// }
-
-// /* The container <div> - needed to position the dropdown content */
-// .dropdown {
-//     position: relative;
-//     display: inline-block;
-// }
-
-// /* Dropdown Content (Hidden by Default) */
-// .dropdown-content {
-//     display: none;
-//     position: absolute;
-//     background-color: #f9f9f9;
-//     min-width: 160px;
-//     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-// }
-
-// /* Links inside the dropdown */
-// .dropdown-content a {
-//     color: black;
-//     padding: 12px 16px;
-//     text-decoration: none;
-//     display: block;
-// }
-
-// /* Change color of dropdown links on hover */
-// .dropdown-content a:hover {background-color: #f1f1f1}
-
-// /* Show the dropdown menu on hover */
-// .dropdown:hover .dropdown-content {
-//     display: block;
-// }
-
-// /* Change the background color of the dropdown button when the dropdown content is shown */
-// .dropdown:hover .dropbtn {
-//     background-color: #3e8e41;
-// }
-
-
-
-$fps-color: #4747d1;
-$moba-color: #ff7733;
-$more-color: #339966;
-$legacy-color: #0066cc;
-
 // Basic Navbar Styling
 .w3-navbar {
     background-color: #333 !important;
     color: #fff;
     a {
-        padding: 12px 20px !important;
+        padding: 13px 20px !important;
         color: #fff;
         transition: 0.3s;
         &:hover {
@@ -175,27 +19,17 @@ $legacy-color: #0066cc;
     }
 }
 
-.w3-navbar .drop-content {
+.w3-navbar .w3-dropdown-content {
     a {
-        color: #000;
+        color: #000 !important;
     }
 }
 
-.navvy {
-    max-width: 1260px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-@media screen and (max-width: 768px) {
-    .navvy {
-        width: 100%;
-    }
-}
 
 // Logo Link
-.w3-navbar a.logo {
-    padding: 10px 40px !important;
+.w3-navbar a.logo-link {
+    padding: 13px 40px !important;
+
 }
 
 
@@ -316,8 +150,22 @@ $legacy-color: #0066cc;
 }
 
 // Dropnav 
-.dropnav-links {
+
+.w3-dropnav {
+    background-color: #4c4c4c;
+
+    width: 75% !important;
+    margin: 0 auto;
     a {
-        padding: 5px 10px 5px 2px;
+        font-size: 16px;
+        color: #2a2a2a;
+        padding: 3px 5px;
+        &:hover {
+            background-color: #5a5c66;
+        }
     }
+}
+
+@media screen and (min-width: 960px) {
+    width: 50% !important;
 }
