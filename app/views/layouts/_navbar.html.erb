@@ -6,7 +6,11 @@
     <a href="javascript:void(0);" onclick="myFunction()">☰</a>
   </li>
   <!-- Logo -->
-  <li><%= link_to "Mythic Gaming", root_path, :class => "logo-link" %></li>
+  <li>
+    <%= link_to root_path, :class => "logo-link" do %>
+      <i class="fa fa-cubes"></i> Mythic Gaming
+    <% end %>  
+  </li>
 
   <!-- Standard Link for Navbar Example -->
   <!-- <li class="w3-hide-small"><a href="#">Link 3</a></li> -->
@@ -16,7 +20,7 @@
     <%= link_to "FPS Games", root_path, :class => "fps-link" %>
     <div class="w3-dropdown-content w3-card-4 fps-drop-content">
       <% Game.fps.each do |x| %>
-        <%= link_to "#{x.short_title}", brackets_path %>
+        <%= link_to "#{x.short_title}", x %>
       <% end %>
     </div>
   </li>
@@ -24,7 +28,7 @@
     <%= link_to "MOBA Games", root_path, :class => "moba-link" %>
     <div class="w3-dropdown-content w3-card-4 moba-drop-content">
       <% Game.moba.each do |x| %>
-        <%= link_to "#{x.short_title}", brackets_path %>
+        <%= link_to "#{x.short_title}", x %>
       <% end %>
     </div>
   </li>
@@ -32,7 +36,7 @@
     <%= link_to "More Games", root_path, :class => "more-link" %>
     <div class="w3-dropdown-content w3-card-4 more-drop-content">
       <% Game.more.each do |x| %>
-        <%= link_to "#{x.short_title}", brackets_path %>
+        <%= link_to "#{x.short_title}", x %>
       <% end %>
     </div>
   </li>
@@ -40,7 +44,7 @@
     <%= link_to "Legacy Games", root_path, :class => "legacy-link" %>
     <div class="w3-dropdown-content w3-card-4 legacy-drop-content">
       <% Game.legacy.each do |x| %>
-        <%= link_to "#{x.short_title}", brackets_path %>
+        <%= link_to "#{x.short_title}", x %>
       <% end %>
     </div>
   </li>
@@ -53,6 +57,7 @@
       <a href="#">Link 3</a>
     </div>
   </li>
+  <li class="w3-hide-small"><%= link_to ("<i class='fa fa-life-ring'></i>").html_safe %></li>
 
   <!-- Admin -->
   <% if current_user && current_user.admin? %>
@@ -74,8 +79,16 @@
       </div>
     </li>
   <% else %>
-    <li class="w3-right w3-hide-small"><%= link_to "Log in", new_user_session_path %></li>
-    <li class="w3-right w3-hide-small"><%= link_to "Sign up", new_user_registration_path %></li>
+    <li class="w3-right w3-hide-small">
+      <%= link_to new_user_session_path, :class => "log-in-link" do %>
+       <!--  <i class="fa fa-anchor"></i> --> Log in
+      <% end %>
+    </li>
+    <li class="w3-right w3-hide-small">
+      <%= link_to new_user_registration_path, :class => "sign-up-link" do %>
+        <!-- <i class="fa fa-check"></i> --> Sign up
+      <% end %>
+    </li>
   <% end %> <!-- End of Right Aligned Links -->
 
   

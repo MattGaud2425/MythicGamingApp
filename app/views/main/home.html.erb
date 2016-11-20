@@ -1,6 +1,8 @@
 <h1>Main#home</h1>
 <p>Find me in app/views/main/home.html.erb</p>
 
+<% 
+=begin %>
 <% if user_signed_in? %>
 	<%= link_to "Log out", signout_path %>
 <% else %>
@@ -15,45 +17,64 @@
 <% if user_signed_in? %>
 	<%= link_to "Edit Profile", edit_user_registration_path %>
 <% end %>
-
-<p><%= link_to "Users Index", users_path %></p>
-<p><%= link_to "Games Index", games_path %></p>
-<p><%= link_to "Brackets Index", brackets_path %></p>
-
-FPS Games: 
-<% Game.fps.each do |x| %> 
-	<div class="fps-item"></div>
-	<p><%= x.title %></p>
-	<p><%= image_tag x.image_file.url(:small) %></p>
-<% end %>
-
-<% Game.moba.each do |x| %>
-	<div class="moba-item"></div>
-	<p><%= x.title %></p>
-	<p><%= image_tag x.image_file.url(:small) %></p>
-<% end %>
-
-<% Game.more.each do |x| %>
-	<div class="more-item"></div>
-	<p><%= x.title %></p>
-	<p><%= image_tag x.image_file.url(:small) %></p>
-<% end %>
-
-<% Game.legacy.each do |x| %>
-	<div class="legacy-item"></div>
-	<p><%= x.title %></p>
-	<p><%= image_tag x.image_file.url(:small) %></p>
-<% end %>
-
-<!-- <div class="games-group" style="background-color: black;">
-	<div class="box"></div>
-		<% Game.fps.each do |x| %>
-		<div class="col-3">
-			<%= image_tag x.image_file.url(:large), height: "250", width: "250" %>
-		</div>
-		<% end %>
-	</div>
+<% 
+=end %>
+<!-- <div class="box games-set">
+	<div class="col-3 game-box"><h3>Content</h3></div>
+	<div class="col-3 game-box"><h3>Content</h3></div>
+	<div class="col-3 game-box"><h3>Content</h3></div>
+	<div class="col-3 game-box"><h3>Content</h3></div>
 </div> -->
+
+<div class="box games-set">
+	<% Game.fps.each do |game| %> 
+		<div class="col-3 full-view">
+			<div class="game-box game-box-fps">
+				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
+				<p><h4><%= game.title %></h4></p>
+				<p>Players Joined </p>
+				<p>Systems</p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<div class="box games-set">
+	<% Game.moba.each do |game| %> 
+		<div class="col-3 full-view">
+			<div class="game-box game-box-moba">
+				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
+				<p><h4><%= game.title %></h4></p>
+				<p></p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<div class="box games-set">
+	<% Game.more.each do |game| %> 
+		<div class="col-3 full-view">
+			<div class="game-box game-box-more">
+				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
+				<p><h4><%= game.title %></h4></p>
+				<p></p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+<div class="box games-set">
+	<% Game.legacy.each do |game| %> 
+		<div class="col-3 full-view">
+			<div class="game-box game-box-legacy">
+				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
+				<p><h4><%= game.title %></h4></p>
+				<p></p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
 
 
 

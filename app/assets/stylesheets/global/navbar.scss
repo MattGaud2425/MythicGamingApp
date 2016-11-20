@@ -22,6 +22,9 @@ $legacy-color: #0066cc;
 .w3-navbar .w3-dropdown-content {
     a {
         color: #000 !important;
+        &:hover {
+            // background-color: #fff;
+        }
     }
 }
 
@@ -147,6 +150,16 @@ $legacy-color: #0066cc;
             color: $legacy-color;
             background-color: rgba(#000, .15);
         }
+}
+
+// Sign up and Log in Links
+
+.sign-up-link:hover {
+    color: #007ace;
+}
+
+.log-in-link:hover {
+    color: #00b386;
 }
 
 // Dropnav 
