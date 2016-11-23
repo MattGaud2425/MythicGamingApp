@@ -3,7 +3,9 @@ class BracketsController < ApplicationController
   
   def index
     if @game.present?
-      @brackets = @game.brackets     
+      @brackets = @game.brackets 
+    else
+      @brackets = Bracket.all   
     end    
   end
 
