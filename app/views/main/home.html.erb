@@ -72,7 +72,7 @@
 				<%= link_to image_tag(game.image_file.url(:original), :class => "game-img"), game %>
 					<p class="game-info">
 					<span class="tall-text">
-						<% if game.title.length >= 25 %>
+						<% if game.title.length >= 22 %>
 							<%= game.short_title %>
 						<% else %>
 							<%= game.title %>	
