@@ -1,5 +1,7 @@
 class MainController < ApplicationController
 	
+	# layout "_hero"
+
   def home
   end
 
