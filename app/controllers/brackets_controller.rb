@@ -29,6 +29,7 @@ class BracketsController < ApplicationController
   end
 
   def show
+    @bracket = Bracket.find(params[:id])
   end
 
   def destroy

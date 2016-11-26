@@ -62,6 +62,7 @@
        <% Game.all.each do |game| %>       
         <tr>
           <td> <%= game.title %> </td>
+          <td> <%= link_to "New Bracket", new_game_bracket_path(game) %> </td>
           <td>
             <table>
             <thead>
