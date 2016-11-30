@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119175729) do
+ActiveRecord::Schema.define(version: 20161126180402) do
 
   create_table "brackets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,6 +44,30 @@ ActiveRecord::Schema.define(version: 20161119175729) do
     t.integer  "image_file_file_size"
     t.datetime "image_file_updated_at"
   end
+
+  create_table "gametypes", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "map_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "bracket_id"
+  end
+
+  add_index "gametypes", ["bracket_id"], name: "index_gametypes_on_bracket_id"
+  add_index "gametypes", ["game_id"], name: "index_gametypes_on_game_id"
+  add_index "gametypes", ["map_id"], name: "index_gametypes_on_map_id"
+
+  create_table "maps", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "game_id"
+    t.integer  "bracket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "maps", ["bracket_id"], name: "index_maps_on_bracket_id"
+  add_index "maps", ["game_id"], name: "index_maps_on_game_id"
 
   create_table "new_examples", force: :cascade do |t|
     t.string   "hello"

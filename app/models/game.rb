@@ -3,6 +3,8 @@ class Game < ActiveRecord::Base
 	validates_attachment_content_type :image_file, content_type: /\Aimage\/.*\z/
 
 	has_many :brackets
+	has_many :gametypes
+	has_many :maps
 
 	scope :fps, -> { where(category: 'fps') }
 	scope :moba, -> { where(category: 'moba') }

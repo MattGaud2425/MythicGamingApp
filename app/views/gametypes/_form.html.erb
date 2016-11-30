@@ -1,0 +1,18 @@
+<%= form_for([@game, @gametype]) do |f| %>
+	<% if @gametype.errors.any? %>
+		<p><%= pluralize(@game.errors.count, "error") %> errors kept form from submitting succesfully:</p>
+
+		<ul>
+			<% @gametype.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %> 
+<p></p>
+<!-- 	<%= f.label :game_id %> <br>
+	<%= f.select :game_id, Game.all.collect { |g| [ g.short_title, g.id ] }, include_blank: true, :class => "select-list" %> -->
+<p></p>
+	<%= f.submit %>
+<% end %>

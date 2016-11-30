@@ -12,7 +12,13 @@ Rails.application.routes.draw do
 
   # Games Nested Brackets
   resources :games do 
-    resources :brackets
+    resources :gametypes
+    
+    resources :brackets do
+      resources :maps do
+        resources :gametypes
+      end
+    end
   end
   resources :brackets, only: :index
   
