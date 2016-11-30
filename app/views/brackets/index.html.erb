@@ -1,18 +1,3 @@
-<h1>Brackets#index</h1>
-<p>Find me in app/views/brackets/index.html.erb</p>
-
-<!-- This is what i want -->
-<!-- Game Title | Num Of Brackets | New Bracket
-            | Bracket Title | Bracket actions show edit destroy
-            | Bracket Title 2 | actions
-            | Bracket Title 3 | actions -->
-
-<%= "#" * 25 %>
-<div class="box">
-  <div class="col-3">Game Title</div>
-  <div class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora consectetur at minima quibusdam accusamus repellat mollitia adipisci, ducimus, molestias quas. Nobis architecto sed doloremque voluptas pariatur, laudantium rem vel esse deleniti, minus facilis. Ipsum ab, odio saepe nisi laboriosam, porro expedita quidem. Numquam dolorum nihil saepe cumque sed tenetur expedita!</div>
-  <div class="col-3">new bracket link</div>
-</div>
 
 <%= "#" * 25 %>
 
@@ -26,8 +11,7 @@
       <th>title:</th>
       <th>maps</th>
       <th>rounds</th>
-      <th>team size</th>
-      <th>game types</th>
+      <th>team size</th>      
 
       <th colspan="3"></th>
     </tr>
@@ -37,10 +21,13 @@
     <% @brackets.each do |bracket| %>
       <tr>
         <td><%= bracket.title %></td>
-        <td><%= bracket.maps %></td>
+        <td><% bracket.maps.each_with_index do |map, index| %>
+              Map: <%= index + 1 %> <%=  map.name %>
+              <br/>
+            <% end %>
+        </td>
         <td><%= bracket.rounds %></td>
         <td><%= bracket.team_size %></td>
-        <td><%= bracket.game_types %></td>
       </tr>
     <% end %>
   </tbody>

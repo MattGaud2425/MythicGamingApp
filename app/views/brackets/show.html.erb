@@ -1,5 +1,8 @@
-<h1>Brackets#show</h1>
-<p>Find me in app/views/brackets/show.html.erb</p>
-
 Title: <%= @bracket.title %>
-Maps: <%= @bracket.maps %>
+	<br/>
+Maps: 
+	<br/>
+<% @bracket.maps.each_with_index do |map, index| %>
+	Map: <%= index + 1 %> <%=  map.name %>
+	<br/>
+<% end %>

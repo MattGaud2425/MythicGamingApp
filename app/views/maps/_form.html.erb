@@ -1,0 +1,15 @@
+<%= form_for([@game, @bracket, @map]) do |f| %>
+	<% if @map.errors.any? %>
+		<p><%= pluralize(@game.errors.count, "error") %> errors kept form from submitting succesfully:</p>
+
+		<ul>
+			<% @map.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %> 
+<p></p>
+	<%= f.submit %>
+<% end %>

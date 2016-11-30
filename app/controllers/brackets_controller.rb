@@ -48,6 +48,6 @@ class BracketsController < ApplicationController
 
 
   def bracket_params 
-    params.require(:bracket).permit(:title, :maps, :rounds, :team_size, :game_types)
+    params.require(:bracket).permit(:title, :rounds, :team_size)
   end
 end
