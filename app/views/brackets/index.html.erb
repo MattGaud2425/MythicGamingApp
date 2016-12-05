@@ -11,7 +11,9 @@
       <th>title:</th>
       <th>maps</th>
       <th>rounds</th>
-      <th>team size</th>      
+      <th>team size</th>
+      <th> Link</th> 
+
 
       <th colspan="3"></th>
     </tr>
@@ -28,6 +30,7 @@
         </td>
         <td><%= bracket.rounds %></td>
         <td><%= bracket.team_size %></td>
+        <td><%= link_to "Maps", game_bracket_maps_path(@game, bracket) %></td>
       </tr>
     <% end %>
   </tbody>

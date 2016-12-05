@@ -1,19 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'maps/index'
-
-  get 'maps/new'
-
-  get 'maps/create'
-
-  get 'maps/edit'
-
-  get 'maps/update'
-
-  get 'maps/show'
-
-  get 'maps/destroy'
-
   # Root
   if Rails.env.development?
     root 'main#amalgam'
@@ -25,8 +11,7 @@ Rails.application.routes.draw do
   get 'home' => "main#home"
 
   # Games Nested Brackets
-  resources :games do 
-    # resources :gametypes    
+  resources :games do   
     resources :brackets do
       resources :maps do
         resources :gametypes

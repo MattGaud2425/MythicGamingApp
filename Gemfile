@@ -29,6 +29,9 @@ gem 'font-awesome-sass'
 
 # Dealing With Errors 
 
+# Guard Plug ins
+
+
 
 group :production do 
 	gem 'pg'
@@ -42,5 +45,13 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  # Guard and plugins:
+  gem 'guard'
+  gem 'guard-compat'
+  gem 'guard-livereload'
+  gem 'guard-bundler'
+  gem 'rack-livereload'
+  # End of Guard
+
 end
 
