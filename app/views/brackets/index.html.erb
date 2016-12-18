@@ -1,19 +1,14 @@
-
-<%= "#" * 25 %>
-
-
 <% if @game.present? %>
   <%= link_to "New Bracket", new_game_bracket_path(@game) %>
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>title:</th>
-      <th>maps</th>
-      <th>rounds</th>
-      <th>team size</th>
-      <th> Link</th> 
-      <th colspan="3"></th>
+      <th>Bracket Title</th>
+      <th>Maps</th>
+      <th>Rounds</th>
+      <th>Team Size</th>
+      <th>Links</th>
     </tr>
   </thead>
 
@@ -25,8 +20,8 @@
         <table>
           <thead>
             <tr>
-              <th>Map Name:</th>
-              <th>Gametypes</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -34,21 +29,11 @@
               <td> Map: <%= index + 1 %> <%=  map.name %> </td>
 
               <!-- <td><%#= link_to "Gametypes", game_bracket_map_gametypes_path(@game, bracket, map) %></td> -->
-              <td> <% map.gametypes.each do |gametype| %>
-                <table>
-                  <thead>
-                    <tr>                      
-                      <th>Gametype Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td><%= gametype.name %></td>
-                    </tr>
-                    </tbody>
-                  </table>
+              <td>
+                <% map.gametypes.each do |gametype| %>
+                    <p><%= gametype.name %></p>
+                <% end %>
               </td>
-              <% end %>
             </tr>
           </tbody>
         </table>

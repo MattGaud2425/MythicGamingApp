@@ -9,8 +9,12 @@
 
 game = Game.create(title: 'Halo:MCC', category: 'fps', active: true)
 bracket = game.brackets.create(title: 'Championship', team_size: '4', rounds: '3')
-map = bracket.maps.create(name: "Lockout")
-gametype = map.gametypes([ { name: "Oddball" }, { name: 'King of the Hill' }])
+
+map_1 = bracket.maps.create(name: "Lockout")
+map_1.gametypes([ { name: "Oddball" }, { name: 'King of the Hill' }])
+
+map_2 = bracket.maps.create(name: "Snowbound")
+map_2.gametypes([ { name: "Capture Flag" }, { name: 'King of the Hill' }])
 
 game = Game.create(title: 'League of Legends', category: 'moba', active: true)
 bracket = game.brackets.create(title: 'Championship', team_size: '4', rounds: '1')

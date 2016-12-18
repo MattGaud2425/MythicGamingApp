@@ -69,13 +69,6 @@ ActiveRecord::Schema.define(version: 20161126180402) do
   add_index "maps", ["bracket_id"], name: "index_maps_on_bracket_id"
   add_index "maps", ["game_id"], name: "index_maps_on_game_id"
 
-  create_table "new_examples", force: :cascade do |t|
-    t.string   "hello"
-    t.string   "kitty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tournaments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
