@@ -49,7 +49,7 @@ group :development do
   gem 'guard'
   gem 'guard-compat'
   gem 'guard-livereload'
-  gem 'guard-bundler'
+  # gem 'guard-bundler'
   gem 'rack-livereload'
   # End of Guard
 
